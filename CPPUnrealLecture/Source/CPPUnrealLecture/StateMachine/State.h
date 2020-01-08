@@ -14,6 +14,9 @@ class CPPUNREALLECTURE_API UState : public UObject
 {
 	GENERATED_BODY()
 public:
+    UPROPERTY(EditAnywhere, Category = "State Handlers")
+    TMap <FName, TSubclassOf<UState>> StateTransitions = TMap <FName, TSubclassOf<UState>>();
+
     UFUNCTION(BlueprintNativeEvent, Category = "State Handlers")
     void OnEnterState();
     void OnEnterState_Implementation() {};
